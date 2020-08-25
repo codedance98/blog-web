@@ -36,6 +36,9 @@ export default {
   justify-content: space-between;
   font-size: 24px;
   font-weight: 700;
+  position:sticky;
+  top:0;
+  background-color:#fff;
   .nav{
     display:flex;
     justify-content: space-between;
