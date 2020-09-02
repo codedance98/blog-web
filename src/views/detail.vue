@@ -1,12 +1,12 @@
 <template>
-	<section id='index-page'>
+	<section id='detail-page'>
     <div class='container'>
       <Header />
-      <div class='list-wrap'>
-        <ul>
-          <li v-for='(item, idx) in data' :key='idx' @click.stop='clickHandle(item.id)'>{{item.title}}</li>
-        </ul>
-      </div>
+      <h2>{{data.title}}</h2>
+      <p class='created_at'>{{computedTime}}</p>
+      <div class='content-wrap'>
+        <div v-html='data.content'></div>
+      </div>  
       <div class='footer'>
         llqi.github.io
       </div>
@@ -19,23 +19,34 @@ import Header from "@/components/common/header"
 export default {
 	data: () => {
 		return {
-			data:[]
+			data:{
+        content:'',
+        title:''
+      }
 		}
   },
   created(){
     this.getData();
+  },
+  computed:{
+    computedTime(){
+      return this.data.created_at.replace('T', ' ').replace('.000Z', '');
+    }
   },
   components: {
     Header
   },
   methods: {
     getData(){
-      fetch('http://127.0.0.1:8081/v1/web/findAll',{
+      fetch(`http://127.0.0.1:8081/v1/web/findOne?id=${this.$route.query.id}`,{
         method:'get',
         mode: 'cors',
         headers: {
     　　　　'Content-Type': 'application/json'
-    　　 }
+    　　 },
+        data:{
+          id: this.$route.query.id
+        }
       }).then((response)=>{
         if (response.ok) {
           return response.json()
@@ -59,8 +70,18 @@ export default {
 }
 </script>
 <style lang="scss">
-#index-page{
-  .list-wrap{
+#detail-page{
+  h2{
+    text-align: center;
+    margin-top: 30px;
+  }
+  .created_at{
+    color:#666;
+    font-size:12px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .content-wrap{
     color:#111;
     box-sizing: border-box;
     padding:20px 20px;
