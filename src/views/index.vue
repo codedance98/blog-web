@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     getData(){
-      fetch('http://127.0.0.1:8081/v1/web/findAll',{
+      fetch('http://127.0.0.1:8081/v1/article/findAll',{
         method:'get',
         mode: 'cors',
         headers: {
@@ -44,7 +44,7 @@ export default {
           alert(`something went wrong!`);
         }
       }).then((response)=>{
-          this.data = response;
+          this.data = response.data;
       })
     },
     clickHandle(_id){
