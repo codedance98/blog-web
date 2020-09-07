@@ -86,7 +86,7 @@ export default {
     box-sizing: border-box;
     padding:20px 20px;
     margin-top:20%;
-    min-height:70vh;
+    min-height:80vh;
     ul{
       li{
         margin-bottom:10px;

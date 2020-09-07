@@ -8,7 +8,7 @@
         </ul>
       </div>
       <div class='footer'>
-        codedance98.github.io
+        <p @click='clickGithubHandle'>codedance98.github.io</p>
       </div>
     </div>
   </section>
@@ -54,6 +54,9 @@ export default {
           id:_id
         }
       })
+    },
+    clickGithubHandle(){
+      window.open('https://github.com/codedance98')
     }
   }
 }
@@ -65,7 +68,7 @@ export default {
     box-sizing: border-box;
     padding:20px 20px;
     margin-top:20%;
-    min-height:70vh;
+    min-height:80vh;
     ul{
       li{
         margin-bottom:10px;
@@ -80,6 +83,9 @@ export default {
     bottom:0;
     padding-bottom:20px;
     background-color:#fff;
+    p{
+      cursor: pointer;
+    }
   }
 }
 </style>
