@@ -1,4 +1,4 @@
-# blob-web
+# blog-web
 
 ## Project setup
 ```
