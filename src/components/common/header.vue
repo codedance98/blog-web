@@ -1,7 +1,7 @@
 <template>
 	<section id='header-com'>
     <div class='brand'>
-      <a href="/index">0ver.io</a>
+      <a href="/index">codedance98</a>
     </div>
     <div class='nav'>
       <p 

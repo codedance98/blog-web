@@ -8,7 +8,7 @@
         <div v-html='data.content'></div>
       </div>  
       <div class='footer'>
-        llqi.github.io
+        codedance98.github.io
       </div>
     </div>
   </section>
