@@ -2,11 +2,14 @@
 	<section id='detail-page'>
     <div class='container'>
       <Header />
-      <h2 class='title'>{{data.title}}</h2>
-      <p class='created_at'>{{computedTime}}</p>
       <div class='content-wrap'>
-        <div v-html='data.content'></div>
-      </div>  
+        <h2 class='title'>{{data.title}}</h2>
+        <p class='created_at'>{{computedTime}}</p>
+        <div class='content markdown-body' >
+          <!-- <div v-html='data.content'></div> -->
+          <VueMarkdown class="article" :source="data.content" v-highlight/>
+        </div>
+      </div>
       <Footer />
     </div>
   </section>
@@ -15,6 +18,7 @@
 <script>
 import Header from "@/components/common/header"
 import Footer from "@/components/common/footer"
+import VueMarkdown from 'vue-markdown'
 export default {
 	data: () => {
 		return {
@@ -35,7 +39,8 @@ export default {
   },
   components: {
     Header,
-    Footer
+    Footer,
+    VueMarkdown
   },
   methods: {
     getData(){
@@ -73,33 +78,40 @@ export default {
 <style lang="scss">
 #detail-page{
   user-select: auto;
-  h2.title{
-    text-align: center;
-    margin-top: 30px;
-  }
-  .created_at{
-    color:#666;
-    font-size:12px;
-    text-align: center;
-    margin-top: 10px;
-  }
   .content-wrap{
-    color:#111;
+    color: #1a1a1a;
     box-sizing: border-box;
-    padding:20px 20px;
-    margin-top:20%;
-    font-size: .14rem;
-    ul{
-      li{
-        margin-bottom:10px;
+    padding-top: .3rem;
+    h2.title{
+      text-align: center;
+    }
+    .created_at{
+      color:#666;
+      font-size:12px;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .content{
+      color:#111;
+      padding: 0 .2rem;
+      box-sizing: border-box;
+      margin-top: .2rem;
+      font-size: .14rem;
+      ul{
+        li{
+          margin-bottom:10px;
+        }
       }
-    }
-    a{
-      text-decoration: underline;
-    }
-    p,li,code{
-      font-size: .12rem; 
-      line-height: .25rem;
+      a{
+        text-decoration: underline;
+      }
+      p,li,code{
+        font-size: .12rem; 
+        line-height: .25rem;
+      }
+      .article{
+
+      }
     }
   }
 }

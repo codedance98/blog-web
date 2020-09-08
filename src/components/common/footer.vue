@@ -1,7 +1,7 @@
 <template>
 	<section id='footer-com'>
     <div class='footer' @click='ref'>
-      github.com/codedance98
+      Github.com/codedance98
     </div>
   </section>
 </template>
@@ -22,5 +22,8 @@ export default {
   color:$primary-color; 
   font-size: .10rem;
   background-color:#fff;
+  box-sizing: border-box;
+  padding-bottom: .2rem;
+  margin-top:.2rem;
 }
 </style>

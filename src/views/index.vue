@@ -66,11 +66,10 @@ export default {
   .list-wrap{
     color: #1a1a1a;
     box-sizing: border-box;
-    padding:20px 20px;
-    margin-top:20%;
+    padding:1rem .2rem .2rem;
     ul{
       li{
-        margin-bottom:10px;
+        margin-bottom: .1rem;
         text-decoration: underline;
       }
     }

@@ -23,12 +23,8 @@ a{
 .container{
   max-width: $content-inner-width;
   margin: auto;
-  height: 93vh;
   position: relative;
 }
-.list-wrap{
-    min-height:80vh
-}
-.content-wrap{
-    min-height:68vh
+.list-wrap, .content-wrap{
+  min-height:80vh
 }
