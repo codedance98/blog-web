@@ -23,18 +23,22 @@
         getRem(designW,count)
     };
     // 每次改变窗口 重新计算
-    window.addEventListener('resize',function () {//执行
-      getRem(designW,count)
+    window.addEventListener('resize',function () {
+      getRem(designW, count)
     })
     // 计算rem并赋值
-    function getRem(pwidth,prem){
+    function getRem(pwidth, prem){
         var html = document.getElementsByTagName("html")[0];
         var oWidth = document.body.clientWidth || document.documentElement.clientWidth;
-        // 适配手机屏幕宽度375px到834px 可以自行调整
-        // if(oWidth > 750){oWidth = 750};
-        // if(oWidth < 375){oWidth = 375};
-        // html.style.maxWidth = oWidth + 'px';
-        html.style.fontSize = oWidth/pwidth*prem + "px";
+        let t = oWidth;
+        // 适配手机屏幕宽度375px到750px 可以自行调整
+        if(oWidth >= 500){
+          oWidth = 500
+        };
+        if(oWidth <= 375){
+          oWidth = 375
+        };
+        html.style.fontSize = oWidth / pwidth * prem + "px";
     }
 </script>
 </html>

@@ -31,13 +31,14 @@ export default {
   }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 #header-com{
+  color:$primary-color; 
   display:flex;
   justify-content: space-between;
-  font-size: .18rem;
+  font-size: .14rem;
   font-weight: 700;
-  position:sticky;
+  // position:sticky;
   top:0;
   background-color:#fff;
   .nav{

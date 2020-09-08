@@ -3,20 +3,16 @@
     padding: 0;
 }
 html,body{
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Chrome/Safari/Opera */
-    -khtml-user-select: none; /* Konqueror */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently */
+    user-select: none;
+    margin:0 auto;
 }
 body{
     font-family: "PingFangSC-Regular","PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
     box-sizing: border-box;
-    word-break: break-all;
+    word-break: break-word;
     padding: .2rem;
     font-size: .12rem;
-    color: $primary-color;
+    color: #1a1a1a;
 }
 a{
     text-decoration: none;
@@ -24,10 +20,15 @@ a{
       color:$primary-color;
     }
 }
-ul,li{
-    // list-style: none;
-}
 .container{
-  max-width:$content-inner-width;
+  max-width: $content-inner-width;
   margin: auto;
+  height: 93vh;
+  position: relative;
+}
+.list-wrap{
+    min-height:80vh
+}
+.content-wrap{
+    min-height:68vh
 }

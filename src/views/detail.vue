@@ -2,26 +2,26 @@
 	<section id='detail-page'>
     <div class='container'>
       <Header />
-      <h2>{{data.title}}</h2>
+      <h2 class='title'>{{data.title}}</h2>
       <p class='created_at'>{{computedTime}}</p>
       <div class='content-wrap'>
         <div v-html='data.content'></div>
       </div>  
-      <div class='footer'>
-        codedance98.github.io
-      </div>
+      <Footer />
     </div>
   </section>
 </template>
 
 <script>
 import Header from "@/components/common/header"
+import Footer from "@/components/common/footer"
 export default {
 	data: () => {
 		return {
 			data:{
         content:'',
-        title:''
+        title:'',
+        created_at:''
       }
 		}
   },
@@ -34,7 +34,8 @@ export default {
     }
   },
   components: {
-    Header
+    Header,
+    Footer
   },
   methods: {
     getData(){
@@ -71,7 +72,8 @@ export default {
 </script>
 <style lang="scss">
 #detail-page{
-  h2{
+  user-select: auto;
+  h2.title{
     text-align: center;
     margin-top: 30px;
   }
@@ -86,21 +88,19 @@ export default {
     box-sizing: border-box;
     padding:20px 20px;
     margin-top:20%;
-    min-height:80vh;
+    font-size: .14rem;
     ul{
       li{
         margin-bottom:10px;
-        text-decoration: underline;
       }
     }
-  }
-  .footer{
-    margin-top:50px;
-    border-top:1px solid #aaa; 
-    position:sticky;
-    bottom:0;
-    padding-bottom:20px;
-    background-color:#fff;
+    a{
+      text-decoration: underline;
+    }
+    p,li,code{
+      font-size: .12rem; 
+      line-height: .25rem;
+    }
   }
 }
 </style>

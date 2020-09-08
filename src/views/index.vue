@@ -7,15 +7,14 @@
           <li v-for='(item, idx) in data' :key='idx' @click.stop='clickHandle(item.id)'>{{item.title}}</li>
         </ul>
       </div>
-      <div class='footer'>
-        <p @click='clickGithubHandle'>codedance98.github.io</p>
-      </div>
+      <Footer />
     </div>
   </section>
 </template>
 
 <script>
 import Header from "@/components/common/header"
+import Footer from "@/components/common/footer"
 export default {
 	data: () => {
 		return {
@@ -26,7 +25,8 @@ export default {
     this.getData();
   },
   components: {
-    Header
+    Header,
+    Footer
   },
   methods: {
     getData(){
@@ -64,27 +64,15 @@ export default {
 <style lang="scss">
 #index-page{
   .list-wrap{
-    color:#111;
+    color: #1a1a1a;
     box-sizing: border-box;
     padding:20px 20px;
     margin-top:20%;
-    min-height:80vh;
     ul{
       li{
         margin-bottom:10px;
         text-decoration: underline;
       }
-    }
-  }
-  .footer{
-    margin-top:50px;
-    border-top:1px solid #aaa; 
-    position:sticky;
-    bottom:0;
-    padding-bottom:20px;
-    background-color:#fff;
-    p{
-      cursor: pointer;
     }
   }
 }
