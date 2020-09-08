@@ -5,9 +5,24 @@
       <div class='content-wrap'>
         <h2 class='title'>{{data.title}}</h2>
         <p class='created_at'>{{computedTime}}</p>
-        <div class='content markdown-body' >
+        <div class='content markdown-body' v-highlight>
           <!-- <div v-html='data.content'></div> -->
-          <VueMarkdown class="article" :source="data.content" v-highlight/>
+          <!-- <code class="language-javascript">
+            import { OhMyBox, OhMyBoxItem } from 'ohmybox'
+            import 'ohmybox/lib/ohmybox.css'
+            &lt;OhMyBox
+              :scrollHeight='scrollHeight'
+              :quickScrollHeight='quickScrollHeight'
+              :scrollDuration='scrollDuration'
+              :clickDuration='clickDuration'
+              :clickDistance='clickDistance'
+              @change='change'
+              @click='click'
+            &gt;
+              &lt;OhMyBoxItem v-for='(item, idx) in 5' :key='idx'&gt;{{item}}&lt;/OhMyBoxItem&gt;
+            &lt;/OhMyBox&gt;
+          </code> -->
+          <VueMarkdown class="article" :source="data.content"/>
         </div>
       </div>
       <Footer />
@@ -19,6 +34,7 @@
 import Header from "@/components/common/header"
 import Footer from "@/components/common/footer"
 import VueMarkdown from 'vue-markdown'
+import 'highlight.js/styles/atom-one-dark.css'
 export default {
 	data: () => {
 		return {
