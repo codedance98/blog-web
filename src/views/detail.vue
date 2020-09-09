@@ -8,6 +8,11 @@
         <div class='content markdown-body' v-highlight>
           <VueMarkdown class="article" :source="data.content"/>
         </div>
+        <div class='other'>
+          <p class='p1' @click='commentHandle'>
+            <span>评论</span>
+          </p>
+        </div>
       </div>
       <Footer />
     </div>
@@ -71,6 +76,9 @@ export default {
           id:_id
         }
       })
+    },
+    commentHandle(){
+      window.open('https://github.com/codedance98/blog-web/issues')
     }
   }
 }
@@ -111,6 +119,15 @@ export default {
       }
       .article{
 
+      }
+    }
+    .other{
+      margin-top:.3rem;
+      .p1{
+        text-decoration: underline;
+        margin-bottom:.2rem;
+        cursor: pointer;
+        color:$primary-color;
       }
     }
   }

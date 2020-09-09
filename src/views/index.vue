@@ -71,6 +71,7 @@ export default {
       li{
         margin-bottom: .1rem;
         text-decoration: underline;
+        cursor: pointer;
       }
     }
   }
