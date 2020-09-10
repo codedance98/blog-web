@@ -25,6 +25,7 @@ export default {
   box-sizing: border-box;
   padding-bottom: .2rem;
   margin-top:.2rem;
+  user-select: none;
   .footer{
     display:flex;
     justify-content: space-between;

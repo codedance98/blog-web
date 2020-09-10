@@ -134,6 +134,7 @@ export default {
         margin-bottom:.2rem;
         cursor: pointer;
         color:$primary-color;
+        user-select: none;
       }
     }
   }

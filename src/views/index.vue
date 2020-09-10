@@ -78,6 +78,7 @@ export default {
         margin-bottom: .1rem;
         text-decoration: underline;
         cursor: pointer;
+        user-select: none;
       }
     }
   }

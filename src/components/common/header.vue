@@ -38,7 +38,7 @@ export default {
   justify-content: space-between;
   font-size: .14rem;
   font-weight: 700;
-  // position:sticky;
+  user-select: none;
   top:0;
   background-color:#fff;
   .nav{
