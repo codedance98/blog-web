@@ -20,7 +20,7 @@
 export default {
 	data: () => {
 		return {
-      navList:["home", "blog"],
+      navList:["home", ""],
       cur: 0
 		}
   },

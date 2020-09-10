@@ -2,10 +2,13 @@
 	<section id='index-page'>
     <div class='container'>
       <Header />
-      <div class='list-wrap'>
+      <div class='list-wrap' v-show='!isLoading'>
         <ul>
           <li v-for='(item, idx) in data' :key='idx' @click.stop='clickHandle(item.id)'>{{item.title}}</li>
         </ul>
+      </div>
+      <div class='loading' v-show='isLoading'>
+        <i class='el-icon-loading'></i>
       </div>
       <Footer />
     </div>
@@ -18,7 +21,8 @@ import Footer from "@/components/common/footer"
 export default {
 	data: () => {
 		return {
-			data:[]
+      data:[],
+      isLoading: false
 		}
   },
   created(){
@@ -30,6 +34,7 @@ export default {
   },
   methods: {
     getData(){
+      this.isLoading = true;
       fetch('http://123.57.252.92:8081/v1/article/findAll',{
         method:'get',
         mode: 'cors',
@@ -44,7 +49,8 @@ export default {
           alert(`something went wrong!`);
         }
       }).then((response)=>{
-          this.data = response.data;
+        this.isLoading = false;
+        this.data = response.data;
       })
     },
     clickHandle(_id){
@@ -73,6 +79,17 @@ export default {
         text-decoration: underline;
         cursor: pointer;
       }
+    }
+  }
+  .loading{
+    min-height: 80vh;
+    position:relative;
+    .el-icon-loading{
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      font-size: .2rem;
     }
   }
 }
