@@ -1,7 +1,18 @@
+const CompressionWebpackPlugin = require('compression-webpack-plugin');
+const isProduction = process.env.NODE_ENV === 'production';
+const productionGzipExtensions = ['js', 'css']; // 增加gzip资源
 module.exports = {
   outputDir: 'dist',
   chainWebpack: () => {},
   configureWebpack: config => {
+    if (isProduction) {
+      config.plugins.push(new CompressionWebpackPlugin({
+        algorithm: 'gzip',
+        test: new RegExp('\\.(' + productionGzipExtensions.join('|') + ')$'),
+        threshold: 10240,
+        minRatio: 0.8
+      }))
+    }
   },
   productionSourceMap: true,
   css: {
