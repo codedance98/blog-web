@@ -3,7 +3,13 @@ const isProduction = process.env.NODE_ENV === 'production';
 const productionGzipExtensions = ['js', 'css']; // 增加gzip资源
 module.exports = {
   outputDir: 'dist',
-  chainWebpack: () => {},
+  chainWebpack: config => {
+    if (process.env.use_analyzer) {
+      config
+        .plugin('webpack-bundle-analyzer')
+        .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
+    }
+  },
   configureWebpack: config => {
     if (isProduction) {
       config.plugins.push(new CompressionWebpackPlugin({
