@@ -1,6 +1,6 @@
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const isProduction = process.env.NODE_ENV === 'production';
-const productionGzipExtensions = ['js', 'css']; // 增加gzip资源
+const productionGzipExtensions = ['js', 'css'];
 module.exports = {
   outputDir: 'dist',
   chainWebpack: config => {
