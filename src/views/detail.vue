@@ -4,7 +4,18 @@
       <Header />
       <div class='content-wrap' v-show='!isLoading'>
         <h2 class='title'>{{data.title}}</h2>
-        <p class='created_at'>{{computedTime}}</p>
+        <div class='meta'>
+          <p class='meta-item'>
+            <span class="iconfont icon-date"></span>{{computedTime}}
+          </p>
+          <p class='meta-item'>
+            <span class="iconfont icon-category"></span>
+            <code v-for='(item, idx) in data.type' :key='idx'>{{item}} </code>
+          </p>
+          <p class='meta-item'>
+             <span class="iconfont icon-browse"></span>{{data.browse || 15}}
+          </p>
+        </div>
         <div class='content markdown-body' v-highlight>
           <VueMarkdown class="article" :source="data.content"/>
         </div>
@@ -34,7 +45,8 @@ export default {
         isLoading: false,
         content:'',
         title:'',
-        created_at:''
+        created_at:'',
+        browse:''
       }
 		}
   },
@@ -99,11 +111,31 @@ export default {
     h2.title{
       text-align: center;
     }
-    .created_at{
+    .meta{
       color:#666;
       font-size:12px;
       text-align: center;
       margin-top: 10px;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      padding-left:30px;
+      .meta-item{
+        margin-right:20px;
+        display:flex;
+        align-items: center;
+        .iconfont.icon-browse,.iconfont.icon-category{
+          font-size: 20px;
+        }
+        span{
+          margin-right:5px;
+        }
+      }
+      code{
+        background-color: rgba(27,31,35,.05);
+        margin-right:10px;
+      }
     }
     .content{
       color:#111;
