@@ -6,14 +6,16 @@
         <h2 class='title'>{{data.title}}</h2>
         <div class='meta'>
           <p class='meta-item'>
-            <span class="iconfont icon-date"></span>{{computedTime}}
+            <span class="iconfont icon-date"></span>
+            <code>{{computedTime}}</code>
           </p>
           <p class='meta-item'>
             <span class="iconfont icon-category"></span>
             <code v-for='(item, idx) in data.type' :key='idx'>{{item}} </code>
           </p>
           <p class='meta-item'>
-             <span class="iconfont icon-browse"></span>{{data.browse || 15}}
+             <span class="iconfont icon-browse"></span>
+             <code>{{data.browse}}</code>
           </p>
         </div>
         <div class='content markdown-body' v-highlight>
@@ -55,7 +57,7 @@ export default {
   },
   computed:{
     computedTime(){
-      return this.data.created_at.replace('T', ' ').replace('.000Z', '');
+      return this.data.created_at.replace('T', ' ').replace('.000Z', '').replace('-', '/').replace('-', '/');
     }
   },
   components: {
@@ -111,22 +113,34 @@ export default {
     h2.title{
       text-align: center;
     }
+    @media only screen and (min-width: 0px) and (max-width: 530px) {
+      .meta{
+       .meta-item:nth-child(2){
+         display:none;
+       }
+      }
+    }
     .meta{
       color:#666;
-      font-size:12px;
+      font-size:.1rem;
       text-align: center;
       margin-top: 10px;
       display:flex;
       align-items: center;
       justify-content: center;
       box-sizing: border-box;
-      padding-left:30px;
       .meta-item{
-        margin-right:20px;
+        margin-right:.1rem;
         display:flex;
         align-items: center;
+        &:last-child{
+          margin-right:0;
+        }
+        .iconfont{
+          font: .16rem;
+        }
         .iconfont.icon-browse,.iconfont.icon-category{
-          font-size: 20px;
+          font-size: .17rem;
         }
         span{
           margin-right:5px;
@@ -135,6 +149,9 @@ export default {
       code{
         // background-color: rgba(27,31,35,.05);
         margin-right:10px;
+      }
+      code:last-child{
+        margin-right:0;
       }
     }
     .content{
