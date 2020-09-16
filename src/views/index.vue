@@ -56,9 +56,10 @@ export default {
     clickHandle(_item){
       let y = new Date(_item.created_at).getFullYear();
       let m = new Date(_item.created_at).getMonth()+1;
+      let d = new Date(_item.created_at).getDate();
       let t = _item.title;
       this.$router.push({
-        path: `/d/${y}/${m}/${t}`
+        path: `/d/${y}/${m}/${d}/${t}`
       })
     },
     clickGithubHandle(){

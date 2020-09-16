@@ -9,7 +9,7 @@ const routes = [
     component: () => import('@/views/index.vue')
   },
   {
-    path: '/d/:year/:month/:title',
+    path: '/d/:year/:month/:date/:title',
     name: 'd',
     component: () => import('@/views/detail.vue')
   },
