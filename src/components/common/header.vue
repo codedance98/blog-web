@@ -1,7 +1,7 @@
 <template>
 	<section id='header-com'>
     <div class='brand'>
-      <a href="/index">codedance98</a>
+      <a href="/">codedance98</a>
     </div>
     <div class='nav'>
       <p
@@ -9,8 +9,8 @@
         v-for='(item, idx) in navList'
         :key='idx'
         :class='{"cur": idx === cur}'
-        @click='navClickHandle(idx)'
-        >{{ item }}
+        @click='navClickHandle(item, idx)'
+        >{{ item.name }}
       </p>
     </div>
   </section>
@@ -20,13 +20,25 @@
 export default {
 	data: () => {
 		return {
-      navList:["home", ""],
+      navList:[
+        {
+          name:'home',
+          uri:'/'
+        },
+        {
+          name:'blog',
+          uri:'/b'
+        }
+      ],
       cur: 0
 		}
   },
   methods: {
-    navClickHandle(idx){
-      this.cur = idx;
+    navClickHandle(_item, _idx){
+      this.cur = _idx;
+      this.$router.push({
+        path: _item.uri
+      })
     }
   }
 }

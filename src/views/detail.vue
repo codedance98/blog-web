@@ -66,7 +66,7 @@ export default {
   methods: {
     getData(){
       this.isLoading = true;
-      fetch(`http://123.57.252.92:8081/v1/article/findOne?id=${this.$route.query.id}`,{
+      fetch(`http://123.57.252.92:8081/v1/article/findOne?title=${decodeURI(this.$route.params.title)}`,{
         method:'get',
         mode: 'cors',
         headers: {
@@ -133,7 +133,7 @@ export default {
         }
       }
       code{
-        background-color: rgba(27,31,35,.05);
+        // background-color: rgba(27,31,35,.05);
         margin-right:10px;
       }
     }

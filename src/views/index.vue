@@ -4,7 +4,7 @@
       <Header />
       <div class='list-wrap' v-show='!isLoading'>
         <ul>
-          <li v-for='(item, idx) in data' :key='idx' @click.stop='clickHandle(item.id)'>{{item.title}}</li>
+          <li v-for='(item, idx) in data' :key='idx' @click.stop='clickHandle(item)'>{{item.title}}</li>
         </ul>
       </div>
       <div class='loading' v-show='isLoading'>
@@ -53,12 +53,12 @@ export default {
         this.data = response.data;
       })
     },
-    clickHandle(_id){
+    clickHandle(_item){
+      let y = new Date(_item.created_at).getFullYear();
+      let m = new Date(_item.created_at).getMonth()+1;
+      let t = _item.title;
       this.$router.push({
-        path: '/detail',
-        query: {
-          id:_id
-        }
+        path: `/d/${y}/${m}/${t}`
       })
     },
     clickGithubHandle(){

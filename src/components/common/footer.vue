@@ -1,7 +1,7 @@
 <template>
 	<section id='footer-com'>
     <div class='footer'>
-      <p>ref: <span @click='ref'>github.com/codedance98</span></p>
+      <p>refer: <span @click='ref'>github.com/codedance98</span></p>
       <p>联系我: <a href="mailto:codedance98@gmail.com" target="_blank">codedance98@gmail.com</a></p>
     </div>
   </section>

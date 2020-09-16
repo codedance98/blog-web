@@ -5,17 +5,18 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    redirect: '/index'
-  },
-  {
-    path: '/index',
     name: 'index',
     component: () => import('@/views/index.vue')
   },
   {
-    path: '/detail',
-    name: 'detail',
+    path: '/d/:year/:month/:title',
+    name: 'd',
     component: () => import('@/views/detail.vue')
+  },
+  {
+    path: '/b/',
+    name: 'index',
+    component: () => import('@/views/index.vue')
   }
 ]
 
