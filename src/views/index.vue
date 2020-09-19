@@ -35,7 +35,7 @@ export default {
   methods: {
     getData(){
       this.isLoading = true;
-      fetch('http://123.57.252.92:8081/v1/article/findAll',{
+      fetch('http://8.210.115.7:8081/v1/article/findAll',{
         method:'get',
         mode: 'cors',
         headers: {
