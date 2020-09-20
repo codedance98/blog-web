@@ -1,8 +1,8 @@
 <template>
 	<section id='footer-com'>
     <div class='footer'>
-      <p>refer: <span @click='ref'>github.com/codedance98</span></p>
-      <p>联系我: <a href="mailto:codedance98@gmail.com" target="_blank">codedance98@gmail.com</a></p>
+      <p>refer: <span @click='ref' class='ltalic'>github.com/codedance98</span></p>
+      <p>联系我: <a href="mailto:codedance98@gmail.com" class='ltalic' target="_blank">codedance98@gmail.com</a></p>
     </div>
   </section>
 </template>
@@ -29,6 +29,9 @@ export default {
   .footer{
     display:flex;
     justify-content: space-between;
+    .ltalic{
+      font-style:italic;
+    }
     p:first-child{
       span{
         color:$primary-color; 
