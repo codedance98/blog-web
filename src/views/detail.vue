@@ -18,8 +18,8 @@
              <code>{{data.browse}}</code>
           </p>
         </div>
-        <div class='content markdown-body' v-highlight>
-          <VueMarkdown class="article" :source="data.content"/>
+        <div class='content markdown-body'>
+          <VueMarkdown class="article" :source="data.content" v-highlight/>
         </div>
         <div class='other'>
           <p class='p1' @click='commentHandle'>
@@ -173,7 +173,15 @@ export default {
         line-height: .25rem;
       }
       .article{
-
+        // code.{
+        //   border-radius: 3px;
+        //   margin-top:
+        // }
+        // pre,code{
+        //   border-radius: 3px;
+        //   padding: 16px;
+        //   box-sizing: border-box;
+        // }
       }
     }
     .other{
