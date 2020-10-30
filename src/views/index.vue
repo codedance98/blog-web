@@ -35,7 +35,7 @@ export default {
   methods: {
     getData(){
       this.isLoading = true;
-      fetch('http://123.57.252.92:8081/v1/article/findAll',{
+      fetch('http://api.cd98.xyz/v1/article/findAll',{
         method:'get',
         mode: 'cors',
         headers: {
@@ -57,7 +57,7 @@ export default {
       let y = new Date(_item.created_at).getFullYear();
       let m = new Date(_item.created_at).getMonth()+1;
       let d = new Date(_item.created_at).getDate();
-      let t = _item.title;
+      let t = _item.title_en;
       this.$router.push({
         path: `/d/${y}/${m}/${d}/${t}`
       })

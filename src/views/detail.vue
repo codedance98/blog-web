@@ -68,7 +68,7 @@ export default {
   methods: {
     getData(){
       this.isLoading = true;
-      fetch(`http://123.57.252.92:8081/v1/article/findOne?title=${decodeURI(this.$route.params.title)}`,{
+      fetch(`http://api.cd98.xyz/v1/article/findOne?title=${decodeURI(this.$route.params.title)}`,{
         method:'get',
         mode: 'cors',
         headers: {
