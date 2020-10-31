@@ -72,6 +72,9 @@ export default {
         height: .05rem;
         background-color: $primary-color;
       }
+      &:last-child{
+        padding-right: 0;
+      }
     }
   }
 }
