@@ -73,7 +73,7 @@ export default {
   .list-wrap{
     color: #1a1a1a;
     box-sizing: border-box;
-    padding:1rem .2rem .2rem;
+    padding:.5rem .2rem .2rem;
     ul{
       li{
         margin-bottom: .1rem;
