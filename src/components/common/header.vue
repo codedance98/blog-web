@@ -59,12 +59,12 @@ export default {
     p.item{
       margin:0;
       cursor: pointer;
-      padding:0 .15rem;
+      margin:0 .15rem;
       position: relative;
       &.cur::after{
         content: '';
         position: absolute;
-        bottom: -.06rem;
+        bottom: -.1rem;
         left: 50%;
         transform: translate(-50%, -50%);
         border-radius: 5px;
