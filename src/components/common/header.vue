@@ -52,7 +52,6 @@ export default {
   font-weight: 700;
   user-select: none;
   top:0;
-  background-color:#fff;
   .nav{
     display:flex;
     justify-content: space-between;

@@ -21,7 +21,6 @@ export default {
   width:100%;
   border-top:1px solid #aaa;
   font-size: .10rem;
-  background-color:#fff;
   box-sizing: border-box;
   padding-bottom: .2rem;
   margin-top:.2rem;
