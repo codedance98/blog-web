@@ -6,11 +6,8 @@ Highlight.install = function (Vue) {
     Vue.directive('highlight', {
         // 被绑定元素插入父节点时调用
         inserted: function(el) {
-            console.log(0)
-            console.log(el)
             let blocks = el.querySelectorAll('pre code');
             for (let i = 0; i < blocks.length; i++) {
-                console.log(hljs.highlightBlock)
                 hljs.highlightBlock(blocks[i]);
             }
         },
@@ -18,9 +15,7 @@ Highlight.install = function (Vue) {
         componentUpdated: function(el) {
             setTimeout(()=>{
                 let blocks = el.querySelectorAll('pre code')
-                console.log(blocks)
                 blocks.forEach((block) => {
-                    console.log(block)
                     hljs.highlightBlock(block);
                 })
             }, 0)
