@@ -3,9 +3,9 @@
     padding: 0;
 }
 html,body{
-    // user-select: none;
     margin:0 auto;
     background-color:#fff;
+    transition:filter .4s;
 }
 body{
     font-family: "PingFangSC-Regular","PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
@@ -14,6 +14,9 @@ body{
     padding: .2rem;
     font-size: .12rem;
     color: #1a1a1a;
+}
+html.dark{
+  filter:invert(100) hue-rotate(180deg);
 }
 a{
     text-decoration: none;

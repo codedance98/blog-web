@@ -12,6 +12,7 @@
         @click='navClickHandle(item, idx)'
         >{{ item.name }}
       </p>
+      <p @click='modeHandle' class='mode-check'>{{modeName}}</p>
     </div>
   </section>
 </template>
@@ -30,7 +31,8 @@ export default {
           uri:'/b'
         }
       ],
-      cur: 0
+      cur: 0,
+      modeName:'深色'
 		}
   },
   methods: {
@@ -39,6 +41,16 @@ export default {
       this.$router.push({
         path: _item.uri
       })
+    },
+    modeHandle(){
+      let root = document.getElementsByTagName('html')[0];
+      if(!root.classList.contains("dark")){
+        root.className = "dark";
+        this.modeName = '浅色'
+      }else{
+        root.classList.remove('dark');
+         this.modeName = '深色'
+      }
     }
   }
 }
@@ -72,8 +84,10 @@ export default {
         background-color: $primary-color;
       }
       &:last-child{
-        padding-right: 0;
       }
+    }
+    p.mode-check{
+      margin-left: .15rem;
     }
   }
 }
