@@ -88,6 +88,7 @@ export default {
     }
     p.mode-check{
       margin-left: .15rem;
+      cursor: pointer;
     }
   }
 }

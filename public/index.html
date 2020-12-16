@@ -23,6 +23,9 @@
     window.onload = function(){
         getRem(designW,count)
     };
+    document.addEventListener('DOMContentLoaded', function() {
+      getRem(designW,count)
+    }, false);
     // 每次改变窗口 重新计算
     window.addEventListener('resize',function () {
       getRem(designW, count)

@@ -23,7 +23,7 @@
         </div>
         <div class='other'>
           <p class='p1' @click='commentHandle'>
-            <span>评论(github issues)</span>
+            <span>给我留言(github issues)</span>
           </p>
         </div>
       </div>
