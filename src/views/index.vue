@@ -50,7 +50,7 @@ export default {
         }
       }).then((response)=>{
         this.isLoading = false;
-        this.data = response.data;
+        this.data = response.data.filter((item)=> {return item.visible === 1});
       })
     },
     clickHandle(_item){
