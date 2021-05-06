@@ -68,7 +68,7 @@ export default {
   methods: {
     getData(){
       this.isLoading = true;
-      fetch(`http://api.cd98.xyz/v1/article/findOne?title=${decodeURI(this.$route.params.title)}`,{
+      fetch(`http://api.cd98.me/v1/article/findOne?title=${decodeURI(this.$route.params.title)}`,{
         method:'get',
         mode: 'cors',
         headers: {
@@ -156,7 +156,7 @@ export default {
     }
     .content{
       color:#111;
-      padding: 0 .2rem;
+      // padding: 0 .2rem;
       box-sizing: border-box;
       margin-top: .2rem;
       font-size: .14rem;

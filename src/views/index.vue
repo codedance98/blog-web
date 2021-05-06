@@ -35,7 +35,7 @@ export default {
   methods: {
     getData(){
       this.isLoading = true;
-      fetch('http://api.cd98.xyz/v1/article/findAll',{
+      fetch('http://api.cd98.me/v1/article/findAll',{
         method:'get',
         mode: 'cors',
         headers: {
