@@ -13,6 +13,7 @@
     "github-markdown-css": "^4.0.0",
     "highlight.js": "^10.3.2",
     "vue": "^2.6.11",
+    "vue-clipboard2": "^0.3.1",
     "vue-markdown": "^2.2.4",
     "vue-router": "^3.2.0"
   },
